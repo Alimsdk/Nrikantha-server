@@ -2,12 +2,12 @@ const express=require('express');
 require('dotenv').config()
 const app=express();
 const cors=require('cors');
-const port=5000;
+const port=process.env.PORT || 5000;
 // 5WHtSIRaf55IHGrz
 const { MongoClient } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.ofdnr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-console.log(uri);
+console.log('working');
 app.use(cors());
 app.use(express());
 
